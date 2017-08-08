@@ -1,0 +1,426 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  border: solid;
+  border-color: blue;
+  min-height: 100%;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  border: solid;
+  border-color: green;
+  margin: 0;
+  }
+
+.header {
+  text-align: center;
+  background-size: cover;
+  background: #074E68;
+  height: 100%;
+  top: 0;
+  margin: 0;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  margin: 0;
+  border: solid;
+  border-color: orange;
+}
+
+.nav-bar li {
+ border: solid;
+ border-color: blue;
+ margin-left: auto;
+}
+
+.header .headline {
+  color: #ffe;
+  margin: 0;
+  padding: 1rem;
+  }
+
+.logout {
+  padding: 1rem;
+  margin: 0;
+  float: right;
+}
+
+.logout:hover {
+  padding: 1rem;
+  margin: 0;
+  float: right;
+  cursor: pointer;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 5rem;
+    border: 2px solid grey;
+    border-style: double;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/*
+.card {
+  padding: 7rem;
+  margin-left: 8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  border-style: double;
+}
+
+.card:hover, .card:active {
+  padding: 7rem;
+  margin-left: 8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 grey;
+  text-align: center;
+  cursor: pointer;
+}
+*/
+.left {
+  display: inline-block;
+  position:relative;
+  left:75rem;
+  border: solid;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+
+
+.flex-container {
+  background-color: lightgrey;
+  width: 90%;
+  margin:auto;
+  flex-wrap: wrap;
+}
+
+.flex-container-item {
+  width: 90%;
+  margin: auto;
+}
+
+.flex-container-main {
+  background-color: lightgrey;
+  width: 90%;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-flex-container {
+  background-color: lightgrey;
+  width: 90%;
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container-close {
+  background-color: lightpink;
+  width: 90%;
+  height: 100%;
+  margin:auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-right {
+  justify-content: flex-end;
+}
+
+.flex-left {
+  justify-content: flex-start;
+}
+
+.padding-top {
+  padding-top: 15rem;
+}
+
+.close-button {
+  height:2rem;
+}
+
+.flex-item {
+  margin: 5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  border-style: double;
+  height: 20rem;
+}
+
+.flex-item:hover, .flex-item:active {
+  margin: 5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 grey;
+  text-align: center;
+  border-style: double;
+  height: 20rem;
+  cursor: pointer;
+}
+
+.flex-budget-item {
+  width: 51%;
+  border: solid;
+  border-color: green;
+}
+
+
+
+.flex-budget-bar {
+  white-space: nowrap;
+  width: 0%;
+  background-color:green;
+}
+
+.closebtn {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.closebtn:hover, .closebtn:focus {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  flex-wrap: wrap;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 grey;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  border: 1px solid #888;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.modal-content-width-80 {
+  width: 80%;
+}
+
+.modal-content-width-30 {
+  width: 30%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.modal-header {
+  padding: .5rem 2rem;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+
+.modal-body {
+  flex-wrap: wrap;
+  display: flex;
+  border: solid yellow;
+}
+
+.budget-form-content {
+  border: solid red;
+  flex-wrap: wrap;
+  display: flex;
+  width: 50%;
+}
+
+.budget-form-content2 {
+  border: solid blue;
+  flex-wrap: wrap;
+  display: flex;
+  width: 50%;
+}
+
+.category-group {
+  border: solid green;
+  padding: 1rem;
+  width: 51%;
+}
+
+.budget-form {
+  border:solid purple;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+
+dl {
+  padding:.5rem;
+  border: solid;
+  border-color: black;
+
+}
+
+dd {
+  margin:auto;
+}
+
+.budget-dt {
+  width:51%;
+  margin: auto;
+}
+
+
+/*form {
+  border: solid;
+  border-color: red;
+}*/
+
+/*p {
+  border: solid;
+  border-color: green;
+}*/
+
+#budget_items {
+  border: solid;
+  border-color: purple;
+}
+
+#budget_form {
+  border: solid;
+  border-color: blue;
+}
+
+.transactions-table {
+  border: solid;
+  border-color: black;
+  border-collapse: collapse;
+}
+
+
+tr, td {
+  padding: .5rem;
+  border: solid;
+  border-color: black;
+  border-collapse: collapse;
+}
+
+th {
+  background: linear-gradient(#ECE9E6, #FFFFFF);
+  font-size: 20px;
+}
+
+#transaction-div {
+  border: solid;
+  border-color: red;
+}
+
+i {
+  font-size: 20px;
+}
+
+/*Tablesorter styling*/
+table.tablesorter {
+	font-size: 12px;
+	/*background-color: #4D4D4D;*/
+	width: 1024px;
+	border: 1px solid #000;
+}
+table.tablesorter th {
+	text-align: left;
+	padding: 5px;
+	/*background-color: #6E6E6E;*/
+  background: linear-gradient(#ECE9E6, #FFFFFF)
+}
+table.tablesorter td {
+	color: #FFF;
+	padding: 5px;
+}
+table.tablesorter .even {
+	background-color: #3D3D3D;
+}
+table.tablesorter .odd {
+	background-color: #6E6E6E;
+}
+table.tablesorter .tablesorter-header .tablesorter-headerUnSorted {
+	background-image: url(../img/both.png), linear-gradient(#ECE9E6, #FFFFFF);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	padding-left: 30px;
+	padding-top: 8px;
+	height: auto;
+}
+table.tablesorter .tablesorter-header .tablesorter-headerAsc {
+	background-image: url(../img/ascend.png), linear-gradient(#ECE9E6, #FFFFFF);
+	background-repeat: no-repeat;
+}
+table.tablesorter .tablesorter-header .tablesorter-headerDesc {
+	background-image: url(../img/descend.png), linear-gradient(#ECE9E6, #FFFFFF);
+	background-repeat: no-repeat;
+}
+
+canvas #myChart {
+  width: 10rem;
+  height: 10rem;
+}

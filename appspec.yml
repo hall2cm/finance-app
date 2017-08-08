@@ -1,0 +1,8 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/data/www/budget
+hooks:
+  AFterInstall:
+    - location: /home/ec2-user/data/deploy.sh

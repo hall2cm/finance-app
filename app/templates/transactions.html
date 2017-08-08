@@ -1,0 +1,37 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% include 'header.html' %}
+{% block content %}
+{% include 'flash.html' %}
+
+{% if not transaction.empty %}
+
+<div class="row align-center">
+  <div class="small-9 columns">
+    <table id="transactions-table" class="transactions-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Merchant</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for index, row in transaction.iterrows() %}
+          <tr>
+            <td>{{row['Date'].strftime("%m/%d/%Y")}}</td>
+            <td>{{"${:,.2f}".format(row['Amount'])}}</td>
+            <td>{{row['Merchant']}}</td>
+            <td>{{row['Notes']}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

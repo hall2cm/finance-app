@@ -1,0 +1,55 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<body class="login-body">
+  <div class="title-bar">
+    <div class="top-bar-title">
+      <strong>Budget App</strong>
+    </div>
+    <div class="top-bar-left">
+
+    </div>
+    <div class="top-bar-right">
+
+    </div>
+  </div>
+  <section class="hero">
+    <div class="row align-center align-middle">
+      <div class="medium-6 medium-centered large-4 large-centered columns">
+        {% include 'flash.html' %}
+        <div class="card login-card">
+          <div class="card-section">
+            <h4 class="text-center">Log in to Budget</h4>
+          </div>
+          <form id="login-form" action="" method="post" name="login">
+            {{ form.hidden_tag() }}
+            <label>Username
+              {{ form.email }}
+            </label>
+            <label>Password
+              {{ form.password }}
+            </label>
+            <input class="button expanded" type="submit" value="Sign In" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="row">
+      <div class="small-3 colums">
+        <h6 class="white-text">© 2017 Budget, Inc.</h6>
+      </div>
+      <div class="small-6 columns center-text">
+        <a class="right-padding" href="">Privacy</a>
+        <a class="right-padding" href="">Terms of Service</a>
+        <a class="right-padding" href="">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% include 'header.html' %}
+{% block content %}
+{% include 'flash.html' %}
+<div class="flex-container flex-center padding-top">
+  {% if not buckets.empty %}
+    <canvas id="bucketPieChart"></canvas>
+  {% endif %}
+</div>
+{% endblock %}

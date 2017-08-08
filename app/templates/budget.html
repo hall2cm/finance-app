@@ -1,0 +1,79 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% include 'header.html' %}
+{% block content %}
+{% include 'flash.html' %}
+
+<div class="reveal" id="createBudgetModal" data-reveal>
+  <div class="card">
+    <div class="card-divider">
+      <h4>Create a Budget</h4>
+    </div>
+    <div class="card-section">
+      <div class="row">
+        <div class="column flex-container flex-dir-column">
+          <form class="budget-form" enctype="multipart/form-data" action="{{ url_for('submit_budget') }}" method="POST" name="budget-form">
+            {{ form.hidden_tag() }}
+            <div class="flex-child-auto">
+              {{ form.budgetcategory.label }}
+              {{ form.budgetcategory(class_="category-select-field") }}
+            </div>
+            <div class="flex-child-auto">
+              {{ form.budgetsubcategory.label }}
+              {{ form.budgetsubcategory(class_="subcategory-select-field") }}
+            </div>
+            <div class="flex-child-auto">
+              {{ form.budgetamount.label }}
+              {{ form.budgetamount }}
+            </div>
+            <div class="flex-child-auto">
+              <input type="submit" class="button" value="Add Budget Item"></input>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+  {% if not budget.empty %}
+    <div class="row align-center">
+      <div class="small-2 column flex-container">
+        <button id="create-budget" class="button flex-child-auto align-self-middle" data-open="createBudgetModal">Add a Budget</button>
+      </div>
+    </div>
+    <div id="budget_items" class="row align-center">
+      <div class="small-7 column flex-container flex-dir-column">
+        {% for index, row in budget.iterrows() %}
+          <div class="callout flex-child-auto">
+            {% if row['totalamount'] < 0 %}
+              {{ ("%s" + ": " + "$" + "%s" + " Over") % (row['budgetname'], ((row['totalamount']*-1)|round|int)) }}
+            {% else %}
+              {{ ("%s" + ": " + "$" + "%s" + " Remaining") % (row['budgetname'], ((row['totalamount'])|round|int)) }}
+            {% endif %}
+          <div class="progress" id="progress_{{ index }}"role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
+            <div class="progress-meter" id="{{ index }}" style="width: 50%"></div>
+          </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  {% else %}
+  <div class="row align-center">
+    <div class="small-7 column flex-container flex-dir-column">
+      <div class="flex-child-auto align-self-middle">
+        <h4>You Don't Have a Budget  Yet</h4>
+      </div>
+      <button id="create-budget" class="button flex-child-auto align-self-middle" data-open="createBudgetModal">Create a Budget</button>
+  </div>
+
+  {% endif %}
+
+
+
+
+
+{% endblock %}

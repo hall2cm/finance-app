@@ -1,0 +1,13 @@
+@import '~foundation-sites/scss/foundation';
+@import 'settings';
+
+
+@include foundation-everything(true);
+
+
+.inline-list {
+
+  a:hover {
+      border-bottom: 2px solid $primary-color;
+    }
+  }

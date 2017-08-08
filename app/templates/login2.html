@@ -1,0 +1,85 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+  <div class="title-bar">
+    <div class="top-bar-title">
+      <strong>Budget App</strong>
+    </div>
+    <div class="top-bar-left">
+
+    </div>
+    <div class="top-bar-right">
+
+    </div>
+  </div>
+
+  <div class="row align-center align-middle">
+    <div class="columns small-4">
+      <ul class="tabs" data-tabs id="login-tabs">
+      <li class="tabs-title is-active"><a href="#Login" aria-selected="true">Log In</a></li>
+      <li class="tabs-title"><a href="#Signup">Sign Up</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="row align-center align-middle">
+    <div class="medium-6 medium-centered large-4 large-centered columns tabs-content" data-tabs-content="login-tabs">
+      {% include 'flash.html' %}
+      <div class="card login-card tabs-panel is-active" id="Login">
+        <div class="card-section">
+          <h4 class="text-center">Log in to Budget</h4>
+        </div>
+        <form id="login-form" action="" method="post" name="login">
+          {{ loginform.hidden_tag() }}
+
+          {{ loginform.email.label }}
+          {{ loginform.email }}
+
+          {{ loginform.password.label }}
+          {{ loginform.password }}
+
+          <input class="button expanded" type="submit" value="Sign In" />
+        </form>
+      </div>
+      <div class="card login-card tabs-panel" id="Signup">
+        <div class="card-section">
+          <h4 class="text-center">Sign Up</h4>
+        </div>
+        <form id="signin-form" action="" method="post" name="login">
+          {{ signupform.hidden_tag() }}
+
+          {{ signupform.email.label }}
+          {{ signupform.email }}
+
+          {{ signupform.password.label }}
+          {{ signupform.password }}
+          
+          {{ signupform.confirm.label }}
+          {{ signupform.confirm }}
+          <input class="button expanded" type="submit" value="Sign Up" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="">
+    <div class="row">
+      <div class="small-3 colums">
+
+      </div>
+      <div class="small-6 columns center-text">
+        <a class="right-padding" href="">Privacy</a>
+        <a class="right-padding" href="">Terms of Service</a>
+        <a class="right-padding" href="">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+
+{% endblock %}

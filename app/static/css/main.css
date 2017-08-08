@@ -1,0 +1,54 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+#login-form {
+  padding:1rem;
+}
+
+.card{
+  margin-top:1rem;
+}
+
+.login-card {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+
+.hero {
+  background: url("../img/login-background.jpg") no-repeat center center;
+}
+
+.footer {
+  background-color: #062b33;
+}
+
+.white-text {
+  color: #fefefe;
+}
+
+.right-padding {
+  padding-right: 1rem;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.login-body {
+  background-color: #062b33;
+}
+
+.transactions-table {
+  border: solid;
+  border-color: #e6e6e6;
+}
+
+.top-bar-title {
+  padding-right: 2rem;
+}

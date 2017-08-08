@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {{ stylesheet_tag("foundation_css") | safe }}
+    {{ stylesheet_tag("main_css") | safe }}
+    {{ javascript_tag("foundation_js") | safe }}
+    {{ javascript_tag("app_js") | safe }}
+    {{ javascript_tag("cognito_js") | safe }}
+  </head>
+  <script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    $SCRIPT_URL = {{ request.path|tojson|safe }};
+  </script>
+    {% block content %}{% endblock %}
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "budget",
+  "version": "1.0.0",
+  "description": "Budget app build using Flask",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hall2cm/budget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hall2cm/budget/issues"
+  },
+  "homepage": "https://github.com/hall2cm/budget#readme",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "chart.js": "^2.4.0",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "manifest-revision-webpack-plugin": "^0.3.0",
+    "node-sass": "^3.13.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "sass-loader": "^4.0.2",
+    "webpack": "^1.13.3"
+  }
+}

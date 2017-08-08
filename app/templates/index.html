@@ -1,0 +1,84 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% include 'header.html' %}
+{% block content %}
+{% include 'flash.html' %}
+  <!--<div class="modal">
+    <div class="modal-content modal-content-width-30">
+      <span class="closebtn">&times;</span>
+      <div class="modal-header">
+        <h1>Upload a File</h1>
+      </div>
+      <div class="modal-body justify-center">
+        <form class="" enctype="multipart/form-data" action="{{ url_for('upload') }}" method="POST" name="upload">
+          {{ form.hidden_tag() }}
+          <div class="">
+
+              Upload Transactions:<br>
+                {{ form.upload }}
+
+            {% for error in form.upload.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+            <ul>
+              <input type="submit" class="button" value="Upload"></input>
+            </ul>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>-->
+  <div class="reveal" id="uploadModal" data-reveal>
+    <h1>Hello!</h1>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+
+  <p><a class="button" id="upload-file" data-open="uploadModal">Upload</a></p>
+
+<div class="row small-up-2 medium-up-3 large-up-4">
+  <div id="budget" class="column column-block">
+    <div class="card">
+      <div class="card-divider">
+        <h4 class="text-center">Budget</h4>
+      </div>
+      <div class="card-section">
+        <img src="//placehold.it/600x600" class="thumbnail" alt="">
+      </div>
+    </div>
+  </div>
+  <div id="transactions" class="column column-block">
+    <div class="card">
+      <div class="card-divider">
+        <h4 class="text-center">Transactions</h4>
+      </div>
+      <div class="card-section">
+        <img src="//placehold.it/600x600" class="thumbnail" alt="">
+      </div>
+    </div>
+  </div>
+  <div id="buckets" class="column column-block">
+    <div class="card">
+      <div class="card-divider">
+        <h4 class="text-center">Buckets</h4>
+      </div>
+      <div class="card-section">
+        <img src="//placehold.it/600x600" class="thumbnail" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="column column-block">
+    <div class="card">
+      <div class="card-divider">
+        <h4 class="text-center">Other</h4>
+      </div>
+      <div class="card-section">
+        <img src="//placehold.it/600x600" class="thumbnail" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
